@@ -34,25 +34,53 @@ function randomNumericCharacter(){
 
 // https://www.codecademy.com/forum_questions/53bc71d78c1ccca3d300045a   prompt info
 
+function generatePassword(){
 
-passwordValid = 
-
-function promptOne(){
-var passwordValid = true;
+var passwordValid= prompt("Please choose how many characters you'd like your password to be.");
 
 if (passwordValid < 8){
-  console.log(alert("Must be at least 8 characters and no more than 128 characters"))
-}
-if (passwordValid > 128){
-  console.log(alert("Must be at least 8 characters and no more than 128 characters"))
-}
-else {
-  console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
-}
-}
+    return(alert("Must be at least 8 characters and no more than 128 characters"))
+   };
+
+   if (passwordValid > 128){
+     return(alert("Must be at least 8 characters and no more than 128 characters"))
+   }
+   else {
+     console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
+   };
 
 
 
+
+
+
+
+
+
+
+
+// function promptOne(){
+
+//   passwordValid = true;
+
+// if (passwordValid < 8){
+//   console.log(alert("Must be at least 8 characters and no more than 128 characters"))
+// }
+// if (passwordValid > 128){
+//   console.log(alert("Must be at least 8 characters and no more than 128 characters"))
+// }
+// else {
+//   console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
+// }
+// }
+
+
+
+
+
+
+
+}
 
 
 
