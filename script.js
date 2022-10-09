@@ -32,20 +32,24 @@ function randomNumericCharacter(){
 
 
 
+// https://www.codecademy.com/forum_questions/53bc71d78c1ccca3d300045a   prompt info
 
 
+passwordValid = 
 
+function promptOne(){
+var passwordValid = true;
 
-
-
-var numberOfCharacters = prompt("Please choose how many characters you'd like for you password.")
-
-if (numberOfCharacters < 8 || numberOfCharacters > 128){
-console.log(alert("Must be at least 8 characters and no more than 128 characters"));
-} else { confirm("Click Ok to include special characters.");
+if (passwordValid < 8){
+  console.log(alert("Must be at least 8 characters and no more than 128 characters"))
 }
-
-
+if (passwordValid > 128){
+  console.log(alert("Must be at least 8 characters and no more than 128 characters"))
+}
+else {
+  console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
+}
+}
 
 
 
