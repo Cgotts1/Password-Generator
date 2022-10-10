@@ -1,40 +1,50 @@
+var specialCharacter = "~`!@#$%^&*()-_+={}[]|/\:;\"'<>,.?";
+var specCharSplit = specialCharacter.split('');             //Turns string to an array
+
+var numericCharacter = "0123456789";
+var numCharSplit = numericCharacter.split('');              //Turns string to an array
+
+var upperCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upCaAlCharSplit = upperCaseAlphabet.split('');          //Turns string to an array
+
+var lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
+var lowCaAlCharSplit = lowerCaseAlphabet.split('');         //Turns string to an array
+
+var userChoice = [];                                        //Empty array that stores boolean values
+
+
+
+/* Functions that return random desired characters */
+
+function randomSpecialCharacter(){
+  return specCharSplit[Math.floor(Math.random() * specCharSplit.length)];        // Function to get random special character
+}
+
+function randomNumericCharacter(){
+  return numCharSplit[Math.floor(Math.random() * numCharSplit.length)];          // Function to get random numeric character
+}
+
+function randomUpperCaseLetter(){
+  return upCaAlCharSplit[Math.floor(Math.random() * upCaAlCharSplit.length)];    // Function to get random upper case letter
+}
+
+function randomLowerCaseLetter(){
+  return lowCaAlCharSplit[Math.floor(Math.random() * lowCaAlCharSplit.length)];  //Function to get random lower case letter source: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
+  }
+  
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 
 
-/* Logic goes in here and will return random password*/
 
 
+// Function for generating password below
 
-function randomLowerCaseLetter(){
-var lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
-return lowerCaseAlphabet[Math.floor(Math.random() * lowerCaseAlphabet.length)];  //Function to get random lower case letter source: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
-}
-
-function randomUpperCaseLetter(){
-  var upperCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  return upperCaseAlphabet[Math.floor(Math.random() * upperCaseAlphabet.length)];  // Function to get random upper case letter
-}
-
-
-function randomSpecialCharacter(){
-  var specialCharacter = "~`!@#$%^&*()-_+={}[]|/\:;\"'<>,.?";
-  return specialCharacter[Math.floor(Math.random() * specialCharacter.length)];     // Function to get random special character
-}
-  
-
-function randomNumericCharacter(){
-  var numericCharacter = "0123456789";
-  return numericCharacter[Math.floor(Math.random() * numericCharacter.length)];     // Function to get random numeric character
-}
-
-
-
-
-// https://www.codecademy.com/forum_questions/53bc71d78c1ccca3d300045a   prompt info
-
-function generatePassword(){
+function generatePassword(){                     
 
 var passwordValid= prompt("Please choose how many characters you'd like your password to be.");
 
@@ -46,9 +56,38 @@ if (passwordValid < 8){
      return(alert("Must be at least 8 characters and no more than 128 characters"))
    }
    else {
-     console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
+     var specCharSplit = confirm("Click Ok to include special characters.")
+     console.log(specCharSplit)
    };
 
+   var numCharSplit = confirm("Click Ok to include numeric characters.")
+    if(true){
+    console.log(numCharSplit); 
+  }
+
+   var upCaAlCharSplit = confirm("Click Ok to include uppercase characters.")
+   if(true){
+   console.log(upCaAlCharSplit);
+   }
+
+   var lowCaAlCharSplit = confirm("Click Ok to include lowercase characters.")
+   if(true){
+   console.log(lowCaAlCharSplit);
+   }
+
+
+
+  
+
+
+
+userChoice = specCharSplit.concat(lowCaAlCharSplit);
+console.log(userChoice);
+
+
+
+
+// for(var i = 0, i <= passwordLength; i++)
 
 
 
@@ -59,20 +98,43 @@ if (passwordValid < 8){
 
 
 
-// function promptOne(){
 
-//   passwordValid = true;
 
-// if (passwordValid < 8){
-//   console.log(alert("Must be at least 8 characters and no more than 128 characters"))
-// }
-// if (passwordValid > 128){
-//   console.log(alert("Must be at least 8 characters and no more than 128 characters"))
-// }
-// else {
-//   console.log(confirm("Click Ok to include special characters." + randomLowerCaseLetter()))
-// }
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,51 +143,6 @@ if (passwordValid < 8){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function generatePassword(){                     Writes the main code 
-
-
-
-
-
-
-
-// }
-
-// numberOfCharacter
-  /*
-var numberOfCharacters = prompt("Please choose how many characters you'd like for you password.")
-
-if (numberOfCharacters < 8 || numberOfCharacters > 128){
-console.log(alert("Must be at least 8 characters and no more than 128 characters"));
-} else { confirm("Click Ok to include special characters.");
-}     */
-
-
-
-
-
-
-
-
-
-
-/* console.log(Math.floor(Math.random() * 26))     Generates random number from 1-26 (english alphabet) */ 
 
 
 
@@ -142,4 +159,66 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);                    /* Enables random password to generate when button clicked  */
 
 
-           
+  
+
+
+
+
+// for(var i = 0, i <= passwordLength; i++)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* console.log(Math.floor(Math.random() * 26))     Generates random number from 1-26 (english alphabet) */ 
+
+
+
+// }
+
+// numberOfCharacter
+  /*
+var numberOfCharacters = prompt("Please choose how many characters you'd like for you password.")
+
+if (numberOfCharacters < 8 || numberOfCharacters > 128){
+console.log(alert("Must be at least 8 characters and no more than 128 characters"));
+} else { confirm("Click Ok to include special characters.");
+}     */
