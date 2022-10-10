@@ -10,7 +10,7 @@ var upCaAlCharSplit = upperCaseAlphabet.split('');          //Turns string to an
 var lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
 var lowCaAlCharSplit = lowerCaseAlphabet.split('');         //Turns string to an array
 
-var userChoice = [];                                        //Empty array that stores boolean values
+
 
 
 
@@ -44,50 +44,134 @@ var generateBtn = document.querySelector("#generate");
 
 // Function for generating password below
 
-function generatePassword(){                     
+function generatePassword(){
 
-var passwordValid= prompt("Please choose how many characters you'd like your password to be.");
+// var userChoice = [];                                      
+var wantLowerCase = false;
+var wantUpperCase = false;
+var wantNumeric = false;
+var wantSpecial = false;
 
-if (passwordValid < 8){
+var userChoices = 0;
+
+
+var passwordLength= prompt("Please choose how many characters you'd like your password to be.");
+
+  if (passwordLength < 8){
     return(alert("Must be at least 8 characters and no more than 128 characters"))
-   };
+  };
 
-   if (passwordValid > 128){
+  if (passwordLength > 128){
      return(alert("Must be at least 8 characters and no more than 128 characters"))
-   }
-   else {
-     var specCharSplit = confirm("Click Ok to include special characters.")
-     console.log(specCharSplit)
-   };
-
-   var numCharSplit = confirm("Click Ok to include numeric characters.")
-    if(true){
-    console.log(numCharSplit); 
   }
+  
+  var wantSpecial = confirm("Click Ok to include special characters.")
+  if(wantSpecial) userChoices++;
 
-   var upCaAlCharSplit = confirm("Click Ok to include uppercase characters.")
-   if(true){
-   console.log(upCaAlCharSplit);
-   }
-
-   var lowCaAlCharSplit = confirm("Click Ok to include lowercase characters.")
-   if(true){
-   console.log(lowCaAlCharSplit);
-   }
-
-
-
+    //  userChoice.push(specCharSplit)                                           //  console.log(specCharSplit)
   
 
+   var wantNumeric = confirm("Click Ok to include numeric characters.")
+   if(wantNumeric) userChoices++;
+   // if(true){
+     // console.log(userChoice.push(numCharSplit));                                 // console.log(numCharSplit)
+     
+     
+    var wantUpperCase = confirm("Click Ok to include uppercase characters.")
+    if(wantUpperCase) userChoices++;
+    //  if(true){
+      //  console.log(userChoice.push(upCaAlCharSplit));                               //  console.log(upCaAlCharSplit)
+      
+      
+    var wantLowerCase = confirm("Click Ok to include lowercase characters.")
+    if(wantLowerCase) userChoices++;
+    //  if(true){
+  //  console.log(userChoice.push(lowCaAlCharSplit));
 
+var finalPassword = "";
+console.log(passwordLength);
 
-userChoice = specCharSplit.concat(lowCaAlCharSplit);
-console.log(userChoice);
+var counter = 0;
 
+for(var i = 0; i <= passwordLength; i++){
+  var randomCharacter = "";
+  
+  if(counter==0) {
+    if (wantNumeric){
+      randomCharacter = randomNumericCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantSpecial){
+      randomCharacter = randomSpecialCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantLowerCase){
+      randomCharacter = randomLowerCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantUpperCase){
+      randomCharacter = randomUpperCaseLetter()
+      finalPassword += randomCharacter
+    }
+  } else if(counter==1) {
+    if (wantSpecial){
+      randomCharacter = randomSpecialCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantLowerCase){
+      randomCharacter = randomLowerCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantUpperCase){
+      randomCharacter = randomUpperCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantNumeric){
+      randomCharacter = randomNumericCharacter()
+      finalPassword += randomCharacter
+    }
+  } else if(counter==2) {
+    if (wantLowerCase){
+      randomCharacter = randomLowerCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantUpperCase){
+      randomCharacter = randomUpperCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantNumeric){
+      randomCharacter = randomNumericCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantSpecial){
+      randomCharacter = randomSpecialCharacter()
+      finalPassword += randomCharacter
+    }
+  } else if(counter==3) {
+    if (wantUpperCase){
+      randomCharacter = randomUpperCaseLetter()
+      finalPassword += randomCharacter
+    }
+    else if (wantNumeric){
+      randomCharacter = randomNumericCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantSpecial){
+      randomCharacter = randomSpecialCharacter()
+      finalPassword += randomCharacter
+    }
+    else if (wantLowerCase){
+      randomCharacter = randomLowerCaseLetter()
+      finalPassword += randomCharacter
+    }
+  }
+  
+  console.log(finalPassword)
 
+  if(counter==3) counter=0
+  else counter++;
 
-
-// for(var i = 0, i <= passwordLength; i++)
+}
 
 
 
