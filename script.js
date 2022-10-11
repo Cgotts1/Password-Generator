@@ -1,39 +1,37 @@
-var specialCharacter = "~`!@#$%^&*()-_+={}[]|/\:;\"'<>,.?";
+var specialCharacter = "~`!@#$%^&*()-_+={}[]|/\:;\"'<>,.?"; // Contains full string of characters
 var specCharSplit = specialCharacter.split('');             //Turns string to an array
 
 var numericCharacter = "0123456789";
-var numCharSplit = numericCharacter.split('');              //Turns string to an array
+var numCharSplit = numericCharacter.split('');              
 
 var upperCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var upCaAlCharSplit = upperCaseAlphabet.split('');          //Turns string to an array
+var upCaAlCharSplit = upperCaseAlphabet.split('');          
 
 var lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
-var lowCaAlCharSplit = lowerCaseAlphabet.split('');         //Turns string to an array
+var lowCaAlCharSplit = lowerCaseAlphabet.split('');         
 
 
 
 
 
-/* Functions that return random desired characters */
+// Functions that return random desired characters https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
 
 function randomSpecialCharacter(){
-  return specCharSplit[Math.floor(Math.random() * specCharSplit.length)];        // Function to get random special character
+  return specCharSplit[Math.floor(Math.random() * specCharSplit.length)];        
 }
 
 function randomNumericCharacter(){
-  return numCharSplit[Math.floor(Math.random() * numCharSplit.length)];          // Function to get random numeric character
+  return numCharSplit[Math.floor(Math.random() * numCharSplit.length)];          
 }
 
 function randomUpperCaseLetter(){
-  return upCaAlCharSplit[Math.floor(Math.random() * upCaAlCharSplit.length)];    // Function to get random upper case letter
+  return upCaAlCharSplit[Math.floor(Math.random() * upCaAlCharSplit.length)];    
 }
 
 function randomLowerCaseLetter(){
-  return lowCaAlCharSplit[Math.floor(Math.random() * lowCaAlCharSplit.length)];  //Function to get random lower case letter source: https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
+  return lowCaAlCharSplit[Math.floor(Math.random() * lowCaAlCharSplit.length)];  
   }
   
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -82,6 +80,7 @@ var passwordLength= prompt("Please choose how many characters you'd like your pa
 
 var finalPassword = "";
 console.log(passwordLength);
+var shuffled = ""; 
 
 var counter = 0;
 
@@ -156,47 +155,35 @@ for(var i = 0; i <= passwordLength - 1; i++){               //Added passwordLeng
       randomCharacter = randomLowerCaseLetter()
       finalPassword += randomCharacter
     }
-  }
+  }                                                                                               //end of forloop
+
+
+
+
+
+
+
+
+
   
+  
+
+
+
+
+
+
+
+
+
+
+
   console.log(finalPassword)
 
   if(counter==3) counter=0
   else counter++;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -235,66 +222,69 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);                    /* Enables random password to generate when button clicked  */
 
 
-  
-
-
-
-
-// for(var i = 0, i <= passwordLength; i++)
 
 
 
 
 
 
+// var shuffle = s.split('').sort(() => 0.5 - Math.random()).join('');                       https://www.encodedna.com/javascript/how-to-shuffle-characters-in-a-string.htm
 
 
+// function shuffledString(string){                                                          https://www.youtube.com/watch?v=dlTL6fNu4Po
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* console.log(Math.floor(Math.random() * 26))     Generates random number from 1-26 (english alphabet) */ 
-
-
-
+//   var shuffled = "";                       //Stores shuffled string
+//   string = string.toString();
+//   len = string.length;
+//   for(i=0; i<len; i++){
+//     randPos = Math.floor(Math.random() * string.length);
+//     shuffled += string[randPos];
+//     string = string.slice(0, randPos) + string.slice(randPos + 1)
+//   }
+//   return shuffled;
 // }
 
-// numberOfCharacter
-  /*
-var numberOfCharacters = prompt("Please choose how many characters you'd like for you password.")
 
-if (numberOfCharacters < 8 || numberOfCharacters > 128){
-console.log(alert("Must be at least 8 characters and no more than 128 characters"));
-} else { confirm("Click Ok to include special characters.");
-}     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function shuffledString(){
+
+//   var shuffled = "";                       //Stores shuffled string                                                          
+//   finalPassword = finalPassword.toString();                                                               Makes sure input is a string
+//   len = finalPassword.length;                                                                             gets the length of the string
+//   for(i=0; i<len; i++){                                                                                   transfers the characters of the original sting to new string in random order
+//     randomPosition = Math.floor(Math.random() * finalPassword.length);
+//     shuffled += finalPassword[randomPosition];                                                            adds random character to the new string
+//     finalPassword = finalPassword.slice(0, randomPosition) + finalPassword.slice(randomPosition + 1)      removes random character from original string
+//   }
+//   return shuffled;
+// }
+
+// var shuffled = shuffledString()
