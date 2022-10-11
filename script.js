@@ -66,34 +66,26 @@ var passwordLength= prompt("Please choose how many characters you'd like your pa
   }
   
   var wantSpecial = confirm("Click Ok to include special characters.")
-  if(wantSpecial) userChoices++;
+  if(wantSpecial) userChoices++;                                          
 
-    //  userChoice.push(specCharSplit)                                           //  console.log(specCharSplit)
+
+  var wantNumeric = confirm("Click Ok to include numeric characters.")
+  if(wantNumeric) userChoices++;
+         
   
-
-   var wantNumeric = confirm("Click Ok to include numeric characters.")
-   if(wantNumeric) userChoices++;
-   // if(true){
-     // console.log(userChoice.push(numCharSplit));                                 // console.log(numCharSplit)
-     
-     
-    var wantUpperCase = confirm("Click Ok to include uppercase characters.")
-    if(wantUpperCase) userChoices++;
-    //  if(true){
-      //  console.log(userChoice.push(upCaAlCharSplit));                               //  console.log(upCaAlCharSplit)
-      
-      
-    var wantLowerCase = confirm("Click Ok to include lowercase characters.")
-    if(wantLowerCase) userChoices++;
-    //  if(true){
-  //  console.log(userChoice.push(lowCaAlCharSplit));
+  var wantUpperCase = confirm("Click Ok to include uppercase characters.")
+  if(wantUpperCase) userChoices++;
+  
+  
+  var wantLowerCase = confirm("Click Ok to include lowercase characters.")
+  if(wantLowerCase) userChoices++;
 
 var finalPassword = "";
 console.log(passwordLength);
 
 var counter = 0;
 
-for(var i = 0; i <= passwordLength; i++){
+for(var i = 0; i <= passwordLength - 1; i++){               //Added passwordLength - 1 to return exact # of characters for user input
   var randomCharacter = "";
   
   if(counter==0) {
