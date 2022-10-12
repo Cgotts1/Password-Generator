@@ -84,7 +84,7 @@ var shuffled = "";
 
 var counter = 0;
 
-for(var i = 0; i <= passwordLength - 1; i++){               //Added passwordLength - 1 to return exact # of characters for user input
+for(var i = 0; i <= passwordLength; i++){               //Removed -1 from passwordLength to return exact # of characters for user input
   var randomCharacter = "";
   
   if(counter==0) {
@@ -163,21 +163,21 @@ for(var i = 0; i <= passwordLength - 1; i++){               //Added passwordLeng
 
 
 
-// function shuffledString(){
+function shuffledString(){
 
-//   var shuffled = "";                       //Stores shuffled string                                                          
-//   finalPassword = finalPassword.toString();                                                               Makes sure input is a string
-//   len = finalPassword.length;                                                                             gets the length of the string
-//   for(i=0; i<len; i++){                                                                                   transfers the characters of the original sting to new string in random order
-//     randomPosition = Math.floor(Math.random() * finalPassword.length);
-//     shuffled += finalPassword[randomPosition];                                                            adds random character to the new string
-//     finalPassword = finalPassword.slice(0, randomPosition) + finalPassword.slice(randomPosition + 1)      removes random character from original string
-//   }
-//   return shuffled;
-// }
+  var shuffled = "";                       //Stores shuffled string                                                          
+  finalPassword = finalPassword.toString();                                                        
+  len = finalPassword.length;                                                                       
+  for(i=0; i<len; i++){                                                                                 
+    randomPosition = Math.floor(Math.random() * finalPassword.length);
+    shuffled += finalPassword[randomPosition];                                                            
+    finalPassword = finalPassword.slice(0, randomPosition) + finalPassword.slice(randomPosition + 1)      
+  }
+  return shuffled;
+}
 
-//  shuffled = shuffledString()
-//  finalPassword = shuffled
+ shuffled = shuffledString()
+ finalPassword = shuffled
 
   
   
