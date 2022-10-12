@@ -43,8 +43,9 @@ var generateBtn = document.querySelector("#generate");
 // Function for generating password below
 
 function generatePassword(){
+  
+var results = [];  
 
-// var userChoice = [];                                      
 var wantLowerCase = false;
 var wantUpperCase = false;
 var wantNumeric = false;
@@ -52,28 +53,28 @@ var wantSpecial = false;
 
 var userChoices = 0;
 
-
-var passwordLength= prompt("Please choose how many characters you'd like your password to be.");
+var passwordLength= prompt("Please choose how many characters you'd like your password to be. Must be 8-128 characters. ");
 
   if (passwordLength < 8){
-    return(alert("Must be at least 8 characters and no more than 128 characters"))
+    alert("Must be at least 8 characters and no more than 128 characters")
+    document.getElementById("generate").click()
+    return;
   };
 
   if (passwordLength > 128){
-     return(alert("Must be at least 8 characters and no more than 128 characters"))
+     alert("Must be at least 8 characters and no more than 128 characters")
+     document.getElementById("generate").click()
+     return;
   }
   
   var wantSpecial = confirm("Click Ok to include special characters.")
   if(wantSpecial) userChoices++;                                          
 
-
   var wantNumeric = confirm("Click Ok to include numeric characters.")
-  if(wantNumeric) userChoices++;
-         
+  if(wantNumeric) userChoices++;       
   
   var wantUpperCase = confirm("Click Ok to include uppercase characters.")
   if(wantUpperCase) userChoices++;
-  
   
   var wantLowerCase = confirm("Click Ok to include lowercase characters.")
   if(wantLowerCase) userChoices++;
@@ -160,12 +161,22 @@ for(var i = 0; i <= passwordLength; i++){               //Removed -1 from passwo
 
 
 
+  // https://www.youtube.com/watch?v=dlTL6fNu4Po
 
 
 
-function shuffledString(){
 
-  var shuffled = "";                       //Stores shuffled string                                                          
+  
+
+  if(counter==3) counter=0
+  else counter++;
+
+} // For
+
+
+function shuffledString(finalPassword){                                    //function for shuffling string
+
+  var shuffled = "";                                          //Stores shuffled string                                                          
   finalPassword = finalPassword.toString();                                                        
   len = finalPassword.length;                                                                       
   for(i=0; i<len; i++){                                                                                 
@@ -176,59 +187,21 @@ function shuffledString(){
   return shuffled;
 }
 
- shuffled = shuffledString()
+ shuffled = shuffledString(finalPassword)
  finalPassword = shuffled
 
-  
-  
 
+ 
+  return finalPassword                //Places the finalPassword into textbox on webpage
 
-
-
-
-
-
-
-
-
-
-  console.log(finalPassword)
-
-  if(counter==3) counter=0
-  else counter++;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
+} //generatePassword
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordTextBox = document.querySelector("#password");
 
-  passwordText.value = password;                       /* Inserts password text   */
+  passwordTextBox.value = password;                       /* Inserts password text   */
 
 }
 
