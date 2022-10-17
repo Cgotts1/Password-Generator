@@ -10,14 +10,15 @@ Link to application: https://cgotts1.github.io/Password-Generator/
 ![Password Generator Screenshot](/images/3rd.jpg)
 ![Password Generator Screenshot](/images/pwg.jpg)
 
-
-
-
 ## Credits
 
 https://www.youtube.com/watch?v=dlTL6fNu4Po
 
 https://www.coderrocketfuel.com/article/generate-a-random-letter-from-the-alphabet-using-javascript
+
+AskBCS Learning Assistant: Ben Christensen
+
+FSF-Tutor-Team: Weng Fung
 
 ## License
 

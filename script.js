@@ -31,16 +31,14 @@ function randomLowerCaseLetter(){
 var generateBtn = document.querySelector("#generate");
 
 // Function for generating password below
-function generatePassword(){
-  
-var results = [];  
+function generatePassword(){  
 
 var wantLowerCase = false;
 var wantUpperCase = false;
 var wantNumeric = false;
 var wantSpecial = false;
 
-var userChoices = 0;
+var userChoices = 0;                                   // Increases by 1 each time a desired character is declared true
 
 var passwordLength= prompt("Please choose how many characters you'd like your password to be. Must be 8-128 characters. ");
 
@@ -68,19 +66,19 @@ var passwordLength= prompt("Please choose how many characters you'd like your pa
   var wantLowerCase = confirm("Click Ok to include lowercase characters.")
   if(wantLowerCase) userChoices++;
 
-var finalPassword = "";
+var finalPassword = "";                               // finalPassword is stored into randomCharacter and later into shuffled
 console.log(passwordLength);
-var shuffled = ""; 
 
+var shuffled = ""; 
 var counter = 0;
 
-for(var i = 0; i <= passwordLength - 1; i++){         //For loop begins and added -1 to passwordLength to return exact # of characters for user input
+for(var i = 0; i <= passwordLength - 1; i++){         // For loop begins and added -1 to passwordLength to return exact # of characters for user input
   var randomCharacter = "";
   
-  if(counter==0) {
+  if(counter==0) {                                    // Counter increases to 3 each time the for loop runs and then back to 0
     if (wantNumeric){
       randomCharacter = randomNumericCharacter()
-      finalPassword += randomCharacter
+      finalPassword += randomCharacter                // finalPassword stored into randomCharacter string
     }
     else if (wantSpecial){
       randomCharacter = randomSpecialCharacter()
@@ -147,12 +145,11 @@ for(var i = 0; i <= passwordLength - 1; i++){         //For loop begins and adde
     }
   }                                             
 
-  if(counter==3) counter=0
+  if(counter==3) counter=0                        // Counter restarts
   else counter++;
+}                                                 // For loop ends
 
-} // For loop ends
-
-function shuffledString(finalPassword){          // Function for shuffling string https://www.youtube.com/watch?v=dlTL6fNu4Po                                                                                                
+function shuffledString(finalPassword){           // Function for shuffling string https://www.youtube.com/watch?v=dlTL6fNu4Po                                                                                                
   finalPassword = finalPassword.toString();                                                        
   len = finalPassword.length;                                                                       
   for(i=0; i<len; i++){                                                                                 
@@ -161,24 +158,20 @@ function shuffledString(finalPassword){          // Function for shuffling strin
     finalPassword = finalPassword.slice(0, randomPosition) + finalPassword.slice(randomPosition + 1)      
   }
   return shuffled;
-}
+}                                                 // shuffledString(finalPassword) ends
 
  shuffled = shuffledString(finalPassword)
  finalPassword = shuffled
 
-
- 
-  return finalPassword        // Places the finalPassword into textbox on webpage
-
-} // End of generatePassword()
+  return finalPassword                             // Places the finalPassword into textbox on webpage
+}                                                  // End of generatePassword()
 
 // Writes password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordTextBox = document.querySelector("#password");
 
-  passwordTextBox.value = password;                       // Inserts password text  
-
+  passwordTextBox.value = password;                // Inserts password text  
 }
 
 // Event listener that enables random password to generate when button is clicked 
