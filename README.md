@@ -5,10 +5,10 @@ This project is titled "Password Generator" and is a web application that users 
 ## Usage
 
 Link to application: https://cgotts1.github.io/Password-Generator/
-![Password Generator Screenshot](images\1st.jpg)
-![Password Generator Screenshot](images\2nd.jpg)
-![Password Generator Screenshot](images\3rd.jpg)
-![Password Generator Screenshot](images\pwg.jpg)
+![Password Generator Screenshot](/images/1st.jpg)
+![Password Generator Screenshot](/images/2nd.jpg)
+![Password Generator Screenshot](/images/3rd.jpg)
+![Password Generator Screenshot](/images/pwg.jpg)
 
 
 
