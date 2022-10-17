@@ -25,7 +25,7 @@ function randomUpperCaseLetter(){
 
 function randomLowerCaseLetter(){
   return lowCaAlCharSplit[Math.floor(Math.random() * lowCaAlCharSplit.length)];  
-  }
+}
   
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -74,7 +74,7 @@ var shuffled = "";
 
 var counter = 0;
 
-for(var i = 0; i <= passwordLength - 1; i++){         //Added -1 to passwordLength to return exact # of characters for user input
+for(var i = 0; i <= passwordLength - 1; i++){         //For loop begins and added -1 to passwordLength to return exact # of characters for user input
   var randomCharacter = "";
   
   if(counter==0) {
@@ -145,15 +145,14 @@ for(var i = 0; i <= passwordLength - 1; i++){         //Added -1 to passwordLeng
       randomCharacter = randomLowerCaseLetter()
       finalPassword += randomCharacter
     }
-  }                                              //end of forloop
+  }                                             
 
   if(counter==3) counter=0
   else counter++;
 
-} // For
+} // For loop ends
 
-function shuffledString(finalPassword){          // Function for shuffling string
-  var shuffled = "";                             // https://www.youtube.com/watch?v=dlTL6fNu4Po                                                                                                
+function shuffledString(finalPassword){          // Function for shuffling string https://www.youtube.com/watch?v=dlTL6fNu4Po                                                                                                
   finalPassword = finalPassword.toString();                                                        
   len = finalPassword.length;                                                                       
   for(i=0; i<len; i++){                                                                                 
@@ -169,7 +168,7 @@ function shuffledString(finalPassword){          // Function for shuffling strin
 
 
  
-  return finalPassword                                    // Places the finalPassword into textbox on webpage
+  return finalPassword        // Places the finalPassword into textbox on webpage
 
 } // End of generatePassword()
 
@@ -182,5 +181,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);                    /* Enables random password to generate when button clicked  */
+// Event listener that enables random password to generate when button is clicked 
+generateBtn.addEventListener("click", writePassword);                     
